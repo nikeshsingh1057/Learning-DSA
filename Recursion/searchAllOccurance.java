@@ -13,7 +13,7 @@ public class recursion12 {
     }
     static void SearchAllOccurance(int [] arr,int target,int i)
     {
-        if(i==arr.length-1)
+        if(i==arr.length)
         return;
         if(arr[i]==target)
         list.add(i);    // adding index to list.
@@ -22,7 +22,7 @@ public class recursion12 {
     }
 }
 
-// by using returning list in avobe we not reutrn list 
+// by using returning list note in avobe we not reutrn list we use static ArrayList.
 
 public class recursion12 {
     public static void main(String [] args)
@@ -35,7 +35,7 @@ public class recursion12 {
     }
     static List SearchAllOccurance(int [] arr,int target,int i,List<Integer> list)
     {
-        if(i==arr.length-1)
+        if(i==arr.length)
         return list;
         if(arr[i]==target)
         list.add(i);    // adding index to list.
