@@ -1,0 +1,35 @@
+import java.util.Queue;
+import java.util.*;
+/* 
+ *  reverse Queue using iterative way
+ *  we use stack to reverse a Queue
+ */
+public class reverseQue {
+    public static void main(String[] args) {
+        
+        Queue<Integer> q=new LinkedList<Integer>();
+        q.add(24);
+        q.add(45);
+        q.add(66);
+        q.add(34);
+
+        System.out.println(q); /* before reverse */
+
+        Reverse(q);
+
+        System.out.println(q); /* after reverse */
+    }
+    static void Reverse(Queue<Integer> q)
+    {
+        Stack<Integer> s=new Stack<>();  
+        while(!q.isEmpty())
+        {
+            s.push(q.poll());     /* putting element in stack */
+        }
+        while(!s.isEmpty())
+        { 
+            q.add(s.pop()); /* removing element form stack and add in same queue this will reverse Queue*/
+        }
+        
+    }
+}
