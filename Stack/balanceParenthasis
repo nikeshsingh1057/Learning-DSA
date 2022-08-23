@@ -1,0 +1,40 @@
+import java.util.Stack;
+
+/*
+ *  check for balanced Parenthasis in string.
+ *  this is purley stack problem
+ */
+
+public class stack5 {
+    public static void main(String[] args) {
+        
+        String str="{}[]([])";
+        System.out.println(isBalanced(str));  /* calling function isBalanced(str) to check */
+    }
+    static boolean isBalanced(String str)
+    {
+        Stack<Character> s=new Stack<>();
+        
+        for(int i=0;i<str.length();i++)
+        {
+           if(str.charAt(i)=='[' || str.charAt(i)=='{' || str.charAt(i)=='(')
+           s.add(str.charAt(i));
+           
+           else{
+                  if(s.empty())
+                  return false;
+
+                  else if(matching(s.peek(),str.charAt(i))==false)  /* matching function to check */
+                  return false;
+                  
+                  else 
+                  s.pop();
+           }
+        }
+        return (s.empty());
+    }
+    static boolean matching(char a,char b)
+    {
+       return ((a=='('&& b==')') || (a=='[' && b==']') || (a=='{' && b=='}'));
+    }
+}
