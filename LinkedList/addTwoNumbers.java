@@ -29,7 +29,7 @@ class Solution {
         // adding left element in l2
         while(l2!=null)
         {
-            curr.next=new ListNode((l2.val+carry)%10);
+            curr.next=new ListNode((l2.val+carry)%10); 
             curr=curr.next;
             carry=(l2.val+carry)/10;
             l2=l2.next;
