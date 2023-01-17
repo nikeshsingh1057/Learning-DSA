@@ -3,7 +3,7 @@
 public class Maze_Path {
     public static void main(String[] args) {
         
-        getMaze(1,1,3,3,"");
+        getMaze(1,1,3,3,"");  // this is just for  sample case.
     }
     public static void getMaze(int sr,int sc, int dr,int dc,String ans)
     {
