@@ -48,3 +48,37 @@ and increment answer by one.*/
         DFS(i,j+1,grid);
     }
 }
+
+/*****************************************************************************************************************************************************/
+// similar solution with slight changed.
+
+class Solution {
+public int closedIsland(int[][] grid) {
+    int count =0;
+    for(int i=0; i<grid.length; i++){
+        for(int j=0; j<grid[0].length; j++){
+            // check if its 0 and then get true for dfs to increment the count
+            if(grid[i][j]== 0 && dfs(grid, i,j)) count++;
+        }
+    }
+    return count;
+}
+
+boolean dfs(int grid[][], int i, int j){
+    if(i<0 || j<0 || i>=grid.length || j>=grid[0].length){
+        return false;
+    }
+    // if the digit is already 1 then do not perform dfs
+    if(grid[i][j]== 1) return true;
+    // else if not, then make it 1(to make it visited ) and then perform
+    // dfs on all four sides
+    grid[i][j] =1;
+    
+    boolean top = dfs(grid, i-1, j);
+    boolean bottom = dfs(grid, i+1, j);
+    boolean left = dfs(grid, i, j-1);
+    boolean right = dfs(grid, i, j+1);     
+    // if all the sides gives true, which means its true until 
+    return top && bottom && left && right;
+}
+}
