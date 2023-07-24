@@ -1,4 +1,5 @@
-//  Number of Substrings Containing All Three Characters  leet-1358
+//  Number of Substrings Containing All Three Characters  leet-1358 (a,b,c).
+// Given a string s consisting only of characters a, b and c.
 
 class Solution {
 	public int numberOfSubstrings(String s) {
@@ -37,4 +38,25 @@ class Solution {
         
 		return count;
 	}
+}
+
+// 2nd method.
+
+class Solution {
+    public int numberOfSubstrings(String s) {
+        
+        int count[] = {0, 0, 0}, res = 0 , j = 0;
+        
+        for (int i = 0; i < s.length(); i++) {
+            
+            count[s.charAt(i) - 'a']++;
+            
+            while (count[0] > 0 && count[1] > 0 && count[2] > 0)
+                count[s.charAt(j++) - 'a']--;
+            
+            res += j;
+        }
+        
+        return res;
+    }
 }
