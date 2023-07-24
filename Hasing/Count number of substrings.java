@@ -34,3 +34,43 @@ class Solution
        return ans;
     }
 }
+
+// 2nd method (same hai just hashmap ke jagh char array le liye hai).
+
+class Solution
+{
+    long substrCount (String str, int K) {
+     
+       return count(str,K)-count(str,K-1);
+    }
+    
+    long count(String s, int k){
+        
+        long c1 = 0;;
+        //long c2 = 0;;
+        int i=0;
+        int j = -1;;
+        int distinct = 0;;
+      //  Map<Character,Integer> map = new HashMap<>();
+        int[] freq = new int[26];;
+        while(i < s.length()){
+            char c = s.charAt(i);
+           // map.put(c,map.getOrDefault(c,0)+1);
+           if(freq[c-'a'] == 0){
+               distinct++;;
+           }
+           freq[c-'a']++;;
+            
+            while(distinct > k){
+                j++;
+                freq[s.charAt(j)-'a']--;;
+                if(freq[s.charAt(j)-'a']==0){
+                    distinct--;
+                }
+            }
+            c1 += (long)(i-j);;
+            i++;
+        }
+        return c1;
+    }
+}
