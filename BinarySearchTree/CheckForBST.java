@@ -75,3 +75,43 @@ public class CheckForBST {
         System.out.println(cc.isValidBST(root));
     }
 }
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+// method 2 using pair class (monu bhaiya logic)
+// https://leetcode.com/problems/validate-binary-search-tree/   Leetcode 98
+
+class Solution { // monu bhaiya solution.
+// this question is base of other question.
+    public boolean isValidBST(TreeNode root) {
+        
+        return ValidBst(root).isbst;
+    }
+    public BstPair ValidBst(TreeNode root){
+
+        if(root==null)
+            return new BstPair();
+
+        BstPair lbp =ValidBst(root.left); // lbp=left bst pair.
+        BstPair rbp=ValidBst(root.right); // rbp=right bst pair
+        BstPair sbp=new BstPair();
+        
+        sbp.max=Math.max(lbp.max,Math.max(rbp.max,root.val));
+        sbp.min=Math.min(root.val,Math.min(lbp.min,rbp.min));
+
+        if(lbp.isbst && rbp.isbst && lbp.max<root.val && rbp.min >root.val)
+            sbp.isbst=true;
+        else
+            sbp.isbst=false;
+        
+        return sbp;
+    }
+}
+class BstPair{
+
+    boolean isbst=true;
+    long min=Long.MAX_VALUE;
+    long max=Long.MIN_VALUE;
+}
+
+
+
