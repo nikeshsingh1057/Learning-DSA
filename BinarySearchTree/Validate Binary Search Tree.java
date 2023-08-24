@@ -24,3 +24,35 @@ public class Solution {
 		return true;
 	}
 }
+
+// secnd way using pair class ( if not understand watch pepcoding levl 1 treePlaylist ).
+
+class Solution { // Watch Pepcoding if not UnderStand Level_1 Playlist.
+// this question is base of other question.
+    public boolean isValidBST(TreeNode root) {
+        
+        return ValidBst(root).isbst;
+    }
+    public BstPair ValidBst(TreeNode root){
+
+        if(root==null)
+            return new BstPair();
+
+        BstPair lbp =ValidBst(root.left); // lbp=left bst pair.
+        BstPair rbp=ValidBst(root.right); // rbp=right bst pair
+        BstPair sbp=new BstPair();
+        
+        sbp.max=Math.max(root.val,Math.max(lbp.max,rbp.max));
+        sbp.min=Math.min(root.val,Math.min(lbp.min,rbp.min));
+
+        sbp.isbst=lbp.isbst && rbp.isbst && root.val>lbp.max && root.val<rbp.min;
+       
+        return sbp;
+    }
+}
+class BstPair{
+
+    boolean isbst=true;
+    long min=Long.MAX_VALUE;
+    long max=Long.MIN_VALUE;
+}
