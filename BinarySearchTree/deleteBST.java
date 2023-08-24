@@ -147,3 +147,15 @@ class Solution { // monu bhaiya soultion.
         return Math.max(root.val,right);
     }
 }
+// logic for if deleted node left is not null and deleted node right not null in that case we can either swap it value from :--
+// current node se right me jakar ab left ka value se swap kar sakte hai. (yani jo sabse left me hoga ussase ).
+// current node se left me jakar ab jo right ka value se swap kar sakte hai.(yani jo sabse right me hoga ussase).
+
+/*                          15
+                           /   \
+                          10    20
+                         /  \   /  \
+                        5    12 17  33                      
+              so we can only swap 15 with 12 or 17  i.e see in inorder tarvesahl 5,10,12,15,17,20,33
+              hence 15 is replace by only 12 or 17.
+*/
