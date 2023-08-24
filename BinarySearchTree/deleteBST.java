@@ -105,3 +105,45 @@ public class deleteBST {
         dl.InorderTraveshal(root);
     }
 }
+
+// method 2 similar to above method just for intution we past it agian here. 
+
+class Solution { // monu bhaiya soultion.
+    public TreeNode deleteNode(TreeNode root, int key) {
+        
+        if(root==null)
+            return null;
+
+        if(root.val<key){
+            root.right=deleteNode(root.right,key);
+        }
+        else if(root.val>key){
+            root.left=deleteNode(root.left,key);
+        }
+        else{
+            if(root.left==null){ // this  if() and elseif() will valid for both single child node and leaf node. yani dono case handel ho jayega. do dry run for leaf node and single node 
+                return root.right;
+            }
+            else if(root.right==null)
+                return root.left;
+            // if delete node left is not null and deleted node right is not null.
+            // hum deleted ke left se maximum ya right se maxm se swap kar denge and maxm wale ko delete kar denge.
+            else{
+                int max=maxInBst(root.left);
+                root.left=deleteNode(root.left,max);
+                root.val=max;
+            }
+        }
+        return root;
+    }
+
+    // maximum calculate karne ka function hai.
+    public int maxInBst(TreeNode root){
+
+        if(root==null)
+            return Integer.MIN_VALUE;
+        
+        int right=maxInBst(root.right);
+        return Math.max(root.val,right);
+    }
+}
