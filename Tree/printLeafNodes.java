@@ -1,5 +1,6 @@
 // Print and remove leaf nodes of given Binary Tree on each iteration
 // leetcode 366 (spent 4 hour on this question to solve ).
+
 import java.util.*;
 
 class Node
@@ -59,6 +60,45 @@ public class demoTree {
         if(right)
             root.right=null;
         return false;   // yaha se false return kiye hai take ye sirf leaf node ko null kare sare node ke left and right ko nahi.
+    }
+}
+
+// 2nd method to print leaf Node at each level using preorder traveshal.
+
+class Solution {
+    public TreeNode removeLeafNodes(TreeNode root, int target) {
+        
+       while(true){
+           
+           ArrayList<Integer> ll=new ArrayList<>();
+           
+           root=printLeaf(root,ll); // function call of printLeaf.
+           System.out.println(ll);
+           
+           ll=new ArrayList<>();
+           if(root.left==null && root.right==null){
+               ll.add(root.val);
+               System.out.println(ll);
+               break;
+           }
+       }
+       return root;
+    }
+    public TreeNode printLeaf(TreeNode root, ArrayList<Integer> ll){
+        
+        // PreOrder Traveshal.
+        if(root==null)
+            return null;
+        
+        if(root.left==null && root.right==null ){
+            ll.add(root.val);
+            return null;
+        }
+        
+        root.left=printLeaf(root.left,ll);
+        root.right=printLeaf(root.right,ll);
+       
+        return root;
     }
 }
 
