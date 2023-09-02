@@ -96,3 +96,42 @@ public class Solution {
 
     }
 }
+
+// method 3rd using pair class pepcoding solution
+class Solution {
+    public int maxPathSum(TreeNode root) {
+        
+        return maxPath(root).NTN_MaxSum;
+    }
+    public static pairsum maxPath(TreeNode root){
+        
+        if(root==null)
+            return new pairsum();
+        
+        pairsum lp=maxPath(root.left);
+        pairsum rp=maxPath(root.right);
+        
+        pairsum myans=new pairsum();
+        int RTN_mxsum=Math.max(lp.RTN_MaxSum,rp.RTN_MaxSum) + root.val;    // left righ me se jayada kon hoga uske liye.
+        int NTN_mxsum= Get_maxsum(lp.NTN_MaxSum,rp.NTN_MaxSum,lp.RTN_MaxSum+rp.RTN_MaxSum+root.val,root.val,RTN_mxsum);
+        
+        myans.RTN_MaxSum=Math.max(RTN_mxsum,root.val);
+        myans.NTN_MaxSum=NTN_mxsum;
+        
+        return myans;
+    }
+    // array ke madhayam se max nikalna.
+    // isme eak bar me fix size ka array create kar leta jitan argument send karenge and uske basis par work karta hai ye eak tarh se array he hai.
+    public static int Get_maxsum(int... arr){
+        
+        int maxsF=arr[0];  // store maximum among all.
+        for(int ele:arr)
+            maxsF=Math.max(maxsF,ele);
+        return maxsF;
+    }
+}
+class pairsum{
+    
+    int NTN_MaxSum =- (int)1e9;    // isme sabse largest path store hota jayega. i.e answer.
+    int RTN_MaxSum=0;           // isme left ya right se jo path maximum aayega usko store karega                                      because wo further answer calculate karne ke kamm me aayega.
+}
