@@ -5,16 +5,16 @@ class Solution {
     
     public String getDirections(TreeNode root, int startValue, int destValue) {
         
-    ArrayList<Character> p1=path(root, startValue);
-		ArrayList<Character> p2=path(root, destValue);
+    	ArrayList<Character> p1=path(root, startValue);
+    	ArrayList<Character> p2=path(root, destValue);
 		 
-		int i=p1.size()-1;
-		int j=p2.size()-1;
+	int i=p1.size()-1;
+	int j=p2.size()-1;
 		
-		while(i>=0 && j>=0 && p1.get(i)==p2.get(j)) { // removing common
-			i--;
-			j--;
-		}
+	while(i>=0 && j>=0 && p1.get(i)==p2.get(j)) { // removing common
+		i--;
+		j--;
+	}
         String ans="";
         while(i>0){
             ans+="U";
@@ -26,7 +26,7 @@ class Solution {
         }
         return ans;
     }
-       public static ArrayList<Character> path(TreeNode root,int b){
+    public static ArrayList<Character> path(TreeNode root,int b){
         
         if(root==null)
             return new ArrayList<>();
