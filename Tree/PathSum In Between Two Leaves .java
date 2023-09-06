@@ -12,6 +12,7 @@ tree ka right null nahi ho then path calculate karo and jo sabse jayda ho wahi a
  /* now isme root node -13 and 5 ke liye path niklage and baki ke liye nahi niklega because -13 ka left and right null nahi hai but 6 path 
    nahi banega because 6 ka right null hai similary for -8 i.e -8 ka right null hai and same for all leaf node i.e 2,1,3 */
 
+// method 1st using pair class.
 class Solution
 {
     int maxPathSum(Node root)
@@ -47,4 +48,34 @@ class pair{
    
     int LTLMaxsum= -(int)1e9-1;  // Node to Node max sum i.e sabse jayada wala sum yani answer store karat jayega.
     int NTLMaxsum= -(int)1e9-1; // leaf to leaf max sum. ye maximum path store karege ke kis path se sabse jayada sum mil raha hai.
+}
+
+
+// method 2nd without using pair class
+
+class Solution
+{
+    static int ans;
+    int maxPathSum(Node root)
+    { 
+        ans=Integer.MIN_VALUE;
+        maxPath_Sum(root);
+        return ans;
+    } 
+    public static int maxPath_Sum(Node root){
+        if(root==null)
+            return Integer.MIN_VALUE;
+        
+        if(root.left==null && root.right==null){
+            return root.data;
+        }
+        
+        int l=maxPath_Sum(root.left);
+        int r=maxPath_Sum(root.right);
+        
+        if(root.left!=null && root.right!=null){
+            ans=Math.max(ans,l+r+root.data);
+        }
+        return Math.max(l,r)+root.data;
+    }
 }
