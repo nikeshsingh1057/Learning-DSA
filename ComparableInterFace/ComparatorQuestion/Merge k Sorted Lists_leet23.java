@@ -40,7 +40,7 @@ now hum comprable bhee use kar sakte thee bass hume ListNode ke class me Compara
 then comprable see bhee PriorityQueue sort ho jata note Comparable interface ko same class me implement karna hota hai jisme object wager 
 banaye hai jaise yaha ListNode me implement karna hoga. */
 
-public class ListNode Comparable<ListNode>{    // ListNode me linked list ka node wagera create ho raha hai i.e sorting linkedlist value.
+public class ListNode implements Comparable<ListNode>{    // ListNode me linked list ka node wagera create ho raha hai i.e sorting linkedlist value.
     int val;
     ListNode next;
     
