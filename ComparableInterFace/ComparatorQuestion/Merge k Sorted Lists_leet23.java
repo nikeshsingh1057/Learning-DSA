@@ -44,7 +44,7 @@ public class ListNode Comparable<ListNode>{    // ListNode me linked list ka nod
     int val;
     ListNode next;
     
-    ListNode() {           // ye tino comparator hai.
+    ListNode() {           // ye tino Constructor hai.
     }              
     ListNode(int val) { 
         this.val = val; 
