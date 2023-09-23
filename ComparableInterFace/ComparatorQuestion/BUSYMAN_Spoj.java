@@ -1,5 +1,6 @@
 // https://www.spoj.com/problems/BUSYMAN/            /* ye question spoj ka hai. */
 // similar question based on this question is 1.meeting room 2. arrivel time of train 
+// gfg meeting room question link-> https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1   (same code for meeting room gfg).
 
 import java.util.Comparator;
 import java.util.*;
