@@ -1,0 +1,6 @@
+// https://leetcode.com/discuss/interview-question/3695233/all-types-of-patterns-for-bits-manipulations-and-how-to-use-it  (bit manu..)
+// https://leetcode.com/discuss/general-discussion/1000929/solved-all-dynamic-programming-dp-problems-in-7-months           (d.p)
+// https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns        (d.p).
+// https://leetcode.com/discuss/study-guide/1308617/Dynamic-Programming-Patterns (d.p).
+// https://leetcode.com/discuss/interview-question/3722472/mastering-sliding-window-technique-a-comprehensive-guide#:~:text=Initialize%20the%20window%20indices%3A%20Start,to%20expand%20the%20window%20size. (sliding w..)
+// https://leetcode.com/discuss/general-discussion/1122776/summary-of-sliding-window-patterns-for-subarray-substring (sliding window).
