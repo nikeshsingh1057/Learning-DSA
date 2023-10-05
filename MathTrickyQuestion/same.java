@@ -14,3 +14,14 @@ public static int fill(){
 	    if(opt<0) return -1;
 	    return 100;
 	}
+
+//----------------------------------------------------------------------------------------------------------------
+ long atmost(String s, int k){
+       
+       String temp="";
+       for(int i=0;i*i<s.length();i++)
+        temp+=s.charAt(i);
+    
+        return solve(s,k);
+      
+    }
