@@ -45,7 +45,7 @@ class Main{
 	}
 }
 
-// comparator ke liye alag se class manana padta hai aur uss class ka object pass karna padta hai.
+// comparator ke liye alag se class banana padta hai aur uss class ka object pass karna padta hai.
 // lekin comparable ke liye alag se class nahi banana hota hai.
 class IdComparator implements Comparator<Student>{
 	
