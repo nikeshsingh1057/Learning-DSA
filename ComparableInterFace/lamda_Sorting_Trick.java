@@ -110,3 +110,41 @@ public class lamdaSortTrick {
         test5();    // this is known by java how integer is sort.
     }
 }
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+// sorting 2d array suing lamda expression Method
+
+import java.util.*;       
+
+class Main {
+    
+    public static void printTwoDimensionArray(int [][] arr) {
+        
+        for (int i = 0; i < arr.length; i++) {
+            
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            
+            System.out.println("");
+        }
+    }
+
+    public static void main(String [] args) {
+        int [][] arr = {
+                            {1, 2, 4},
+                            {6, 8, 5},
+                            {4, 7, 12},
+                            {9, 11,-1},
+                            {7, 10, 0},
+                            {13, 16, 45},
+                            {5, 9, 6},
+                            {8, 9, 11},
+                            {10, 11, 32},
+                            {-1,100, 8}
+                        };
+                        
+        Arrays.sort(arr, (a, b) -> Integer.compare(a[2], b[2]));         // a[0]-b[0] is also valid
+        printTwoDimensionArray(arr);
+    }
+}
