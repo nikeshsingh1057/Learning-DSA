@@ -148,3 +148,39 @@ class Main {
         printTwoDimensionArray(arr);
     }
 }
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+//  sort 2d array According to length
+
+import java.util.*;         
+
+class Main {
+    
+    public static void printTwoDimensionArray(int [][] arr) {
+        
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void main(String [] args) {
+        int [][] arr = {
+                            {1, 2, 4},
+                            {6, 8, 5},
+                            {4, 7, 12,12,45,67},
+                            {9, 11,-1},
+                            {7, 10},
+                            {13, 16, 45, 12},
+                            {5, 9, 6},
+                            {8, 9, 11},
+                            {10, 11, 32},
+                            {-1}
+                        };
+                        
+        Arrays.sort(arr, (a, b) -> Integer.compare(a.length, b.length)); // sort a/c to length.
+        printTwoDimensionArray(arr);
+    }
+}
