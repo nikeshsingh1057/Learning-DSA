@@ -105,3 +105,14 @@ public class first {
     }
 }
 
+/* 5.------------------ Time to Minutes Calculator  HH:MM:SS  -------------------- */ 
+
+public int getTime(String s){  
+         
+        char[] time = s.toCharArray();
+         
+        int h = (time[0] - '0') * 10 + (time[1] - '0');  // hour ko ala kiye hai
+        int m = (time[2] - '0') * 10 + (time[3] - '0');  //  minute ko ala kiye hai.
+        // isme second ka nahi lagaye hai isi trah lagega. (jaise upper kiye hai.).
+        return h*60 + m;
+    }
