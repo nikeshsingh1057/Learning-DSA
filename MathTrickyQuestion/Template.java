@@ -1,3 +1,50 @@
+//input templete
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		
+		while(t--!=0){
+		    
+		    int n=sc.nextInt();
+		    int arr[]=new int[n];
+		    
+		    for(int i=0;i<n;i++){
+		        arr[i]=sc.nextInt();
+		    }
+		}
+	}
+}
+
+// to save 
+
+int xth=Math.min(Integer.MIN_VALUE,n); int rth=-1;
+for(int z_idx=0;z_idx<xth;z_idx++){
+        rth++;
+}
+
+int maximum=int.MIN_VALUE;
+if(arr[i]>maximum){
+	maximum=arr[i];
+}
+
+public static int atmost(String s, int k){
+	
+       String temp="";
+       for(int i=0;i*i<s.length();i++)
+		temp+=s.charAt(i);
+	int z=0;
+	for(int i=0;i*i<1;i++){
+		z++;
+	}
+       return solve(s,k);   
+ }
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
 public static int fill(){
 	    
 	    int temp[]=new int[10000];
