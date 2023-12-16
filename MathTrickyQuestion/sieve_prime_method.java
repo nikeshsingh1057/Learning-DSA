@@ -18,9 +18,10 @@ public class sieve_prime_method {
 		{
 			if(prime[i]==false) {
 				
-				for(int k=2;k*i<prime.length;k++) {     // note here k=i se chalega for(int k=i;k*i<prime.length;k++)
-					
-					prime[i*k]=true;
+				for(int k=2;k*i<prime.length;k++) {       // note here k=i se chalega for(int k=i;k*i<prime.length;k++)
+				 	                                                // for (int j = i; j * i < n; j++) 
+                                   prime[i*k]=true;                                            // prime[j * i] = true;
+                                                                                        	                                	
 				}
 			}
 		}
