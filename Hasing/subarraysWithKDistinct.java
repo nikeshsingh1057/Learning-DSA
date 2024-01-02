@@ -1,6 +1,6 @@
 // Subarrays with K Different Integers leetcode 992.
 // https://leetcode.com/problems/subarrays-with-k-different-integers/
-
+// https://practice.geeksforgeeks.org/problems/subarrays-with-k-different-integers/1    (gfg)
 class Solution {
     public int subarraysWithKDistinct(int[] arr, int k) {
         
