@@ -79,3 +79,38 @@ private int find(TreeNode root, int min, int max){
     return Math.max(find(root.left, min, max), find(root.right, min, max));
     
 }
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+// similar question on gfg with slight variation
+// https://www.geeksforgeeks.org/problems/maximum-difference-between-node-and-its-ancestor/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article
+
+class Tree
+{
+    //Function to return the maximum difference between any 
+    //node and its ancestor.
+    static int ans;
+    
+    int maxDiff(Node root)
+    {
+        ans = Integer.MIN_VALUE;
+        
+        dfs(root.left,root.data);   // left
+        dfs(root.right,root.data);  // right
+        
+        return ans;
+    }
+    public void dfs(Node root,int max){
+
+        if(root == null){
+            return;
+        }
+
+        ans = Math.max(max-root.data, ans);
+
+        max = Math.max(root.data, max);
+        
+
+        dfs(root.left, max);
+        dfs(root.right, max);
+    }
+}
