@@ -35,3 +35,31 @@ class Solution {
         return coins; // total coin ab tak ka.
     }
 }
+//j avove solution glat answer de sakta hai gfg ke liye so updated solution is
+
+class Solution {
+    
+    int result=0;
+    
+    public int distributeCoins(TreeNode root) {
+        
+        if(root==null)
+            return 0;
+        distribute(root);
+        
+        return result;
+    }
+    
+    private int distribute(TreeNode root){
+        
+        if(root==null)
+            return 0;
+        
+        int left=distribute(root.left);
+        int right=distribute(root.right);
+        
+        result= result+Math.abs(left) + Math.abs(right);
+        
+        return left+right+root.val-1;
+    }
+}
