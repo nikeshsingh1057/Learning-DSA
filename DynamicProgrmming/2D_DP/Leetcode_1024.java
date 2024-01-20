@@ -46,3 +46,34 @@ class Solution {
     }
 }
 
+// method 2 using greedy_1 (prakash_sukla youtube.)----------------------------------------------------------------------------------
+
+class Solution {
+
+    public int videoStitching(int[][] arr, int time) {
+
+        int leftMax=0;
+        int rightMax=0;
+        int count=0;
+
+        while(rightMax<time){
+
+            for(int i=0;i<arr.length;i++){
+
+                int left=arr[i][0];
+                int right=arr[i][1];
+
+                if(left<=leftMax && right>rightMax){
+                    rightMax=right;
+                }
+            }
+
+            if(rightMax==leftMax)  // if  not update  then return false.
+                return -1;
+
+            leftMax=rightMax;
+            count++;
+        }
+        return count;
+    }
+}
