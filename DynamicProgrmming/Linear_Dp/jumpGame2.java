@@ -30,3 +30,48 @@ class Solution {  // dp seen.
         return result;
     }
 }
+
+// method 2 using greedy 1
+
+class Solution {
+
+    public int jump(int[] arr) {
+        
+        for(int i=1;i<arr.length;i++){
+            arr[i]=Math.max(arr[i]+i,arr[i-1]);
+        }
+        int i=0;
+        int jump=0;
+
+        while(i<arr.length-1){
+
+            i=arr[i];
+            jump++;
+        }
+        return jump;
+    }
+}
+
+// method 2nd using greedy 2 _paraksh sukla method(youtube).
+
+class Solution {    
+
+    public int jump(int[] nums) {
+         
+        int l, r, res;
+        l = r = res = 0;
+         
+        while(r < nums.length-1){
+
+            int farthest = 0;
+
+            for(int i=l; i<=r; i++)
+                farthest = Math.max(farthest, i+nums[i]);
+             
+            l = r+1;
+            r = farthest;
+            res++;
+        }
+        return res;
+    }
+}
