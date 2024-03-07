@@ -50,6 +50,34 @@ class Graph_Implement
 	    }
 	    return false; // path nahi mila (not able to reach).
 	}
+
+	// bft traveshal  --------------------------------------------------------------------------------------------
+	public void bft(){
+	    
+	    Queue<Integer> q=new LinkedList<>(); 
+	    HashSet<Integer> visited=new HashSet<>();
+	    
+	    for(int src:hs.keySet()){
+	        
+	        if(visited.contains(src)==true){
+	            continue;
+	        }
+	        q.add(src);
+	        while(!q.isEmpty()){
+
+    	        int r=q.poll(); 
+    	        if(visited.contains(r))   
+    	            continue; 
+    	            
+    	        visited.add(r); 
+    	        System.out.print(r+" ");
+    	        for(int nbrs:hs.get(r).keySet()){
+    	            if(!visited.contains(nbrs)) 
+    	                q.add(nbrs);
+    	        }
+    	   }
+    	}
+    }
 }
 
 class Main{
@@ -64,7 +92,8 @@ class Main{
         g.AddEdge(3,2,97);
         g.AddEdge(1,4,60);
         
-        g.display();  
-        System.out.println(g.BFS(1,4));
+        //g.display();  
+        // System.out.println(g.BFS(1,4));
+        g.bft();
     }
 }
