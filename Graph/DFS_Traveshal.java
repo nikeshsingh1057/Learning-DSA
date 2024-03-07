@@ -67,6 +67,8 @@ class Graph_Implement
 	    }
 	    return false;
 	}
+	// for dft traveshal we can loop on visited array .
+	// https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1   (see gfg question).
 }
 
 class Main{
