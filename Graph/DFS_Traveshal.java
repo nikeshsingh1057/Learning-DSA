@@ -20,7 +20,7 @@ class Graph_Implement
 	    }
 	}
 	// dfs traveshal Iterative.
-	public boolean BFS(int src,int des){
+	public boolean DFS(int src,int des){
 	    
 	    Stack<Integer> st=new Stack<>(); // isme vertices keep karenge (i.e neighbour)
 	    HashSet<Integer> visited=new HashSet<>();
@@ -91,7 +91,7 @@ class Main{
         g.AddEdge(7,5,23);
         
         g.display();  
-        System.out.println(g.BFS(1,7));
+        System.out.println(g.DFS(1,7));
         System.out.println(g.dfs_recursive(1,7,new HashSet<>())); 
     }
 }
