@@ -12,3 +12,6 @@
 
 //4. Optimal Strategy For A Game (gfg)
 // https://www.geeksforgeeks.org/problems/optimal-strategy-for-a-game-1587115620/1
+
+//5. Maximize the Gold (coding ninza)
+//https://www.naukri.com/code360/problems/maximize-the-gold_2443801
