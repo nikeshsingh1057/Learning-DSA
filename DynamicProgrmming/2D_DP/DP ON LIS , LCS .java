@@ -124,8 +124,16 @@ class Solution       //(isme sirf count print karwa rahe hai)
     }
 }
 // Leetcode 368 
-// https://leetcode.com/problems/delete-operation-for-two-strings/   Leetcode 538
+
+// https://leetcode.com/problems/delete-operation-for-two-strings/    Leetcode 538
+
 // leetcode 72
-// Minimum number of deletions. to make string palendrome
-// leetcode 1312
+
+// Minimum number of deletions. to make string palendrome   
+
+//leetcode 1312
+    
 // longest repeation subsequence 
+
+//https://www.geeksforgeeks.org/problems/convert-to-strictly-increasing-array3351/1     (Strictly Increasing Array) gfg.
+
