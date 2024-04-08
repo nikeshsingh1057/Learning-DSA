@@ -9,3 +9,6 @@
 
 //3. predict the winner                                    
 //https://leetcode.com/problems/predict-the-winner/
+
+//4. Optimal Strategy For A Game (gfg)
+// https://www.geeksforgeeks.org/problems/optimal-strategy-for-a-game-1587115620/1
