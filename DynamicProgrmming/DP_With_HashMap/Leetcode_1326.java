@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/
+
 //  Minimum Number of Taps to Open to Water a Garden
 
 class Solution {
@@ -50,4 +51,4 @@ class Solution {
     }
 }
 
-// this question is similar to leetcode 1024 .
+//other similar question is-> jump game, jump game2 (45) ,leetcode 1024, water the plant gfg
