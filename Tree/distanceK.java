@@ -59,3 +59,68 @@ class Solution {
         downward(root.right,k-1,ll,blocker);
     }
 }
+
+// method 2nd by converting tree into graph
+
+class Solution {     // monu bhaiya solution class 18 april 2024  time 4:21 pm
+
+    public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
+
+        ArrayList<Integer> ans = new ArrayList<>();
+        ArrayList<Integer> graph[] = new ArrayList[501];
+        for(int i=0;i<501;i++){
+            graph[i]=new ArrayList<>();
+        }
+        
+        buildGraph(root,graph);
+        
+        boolean visited[] = new boolean[501];
+        
+        Queue<Integer> q = new LinkedList<>();
+        q.add(target.val);
+        visited[target.val]=true;
+        
+        int c =0;
+        
+        while(!q.isEmpty()){
+        
+            int size = q.size();
+        
+            if(c==k){
+                while(!q.isEmpty())
+                    ans.add(q.poll());
+                break;
+            }
+        
+            c++;
+            for(int i=0;i<size;i++){
+                int rmv = q.poll();
+                for(int j=0;j<graph[rmv].size();j++){
+                    if(!visited[graph[rmv].get(j)]){
+                        visited[graph[rmv].get(j)]=true;
+                        q.add(graph[rmv].get(j));
+                    }
+                }
+        
+            }
+        }
+        return ans;
+    }
+
+    public void buildGraph(TreeNode root, ArrayList<Integer> graph[]){
+        if(root==null){
+            return;
+        }
+        if(root.left!=null){
+            graph[root.val].add(root.left.val);
+            graph[root.left.val].add(root.val);
+        }
+        if(root.right!=null){
+            graph[root.val].add(root.right.val);
+            graph[root.right.val].add(root.val);
+        }
+        buildGraph(root.left,graph);
+        buildGraph(root.right,graph);
+    }
+
+}
