@@ -137,3 +137,5 @@ class Solution       //(isme sirf count print karwa rahe hai)
 
 //https://www.geeksforgeeks.org/problems/convert-to-strictly-increasing-array3351/1     (Strictly Increasing Array) gfg.
 
+//Longest Ideal Subsequence   (https://leetcode.com/problems/longest-ideal-subsequence/)
+
