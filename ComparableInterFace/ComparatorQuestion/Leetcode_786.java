@@ -1,4 +1,4 @@
-// K-th Smallest Prime Fraction _ 768
+// K-th Smallest Prime Fraction _ 786
 
 class Solution { // seen
     public int[] kthSmallestPrimeFraction(int[] arr, int k) {
