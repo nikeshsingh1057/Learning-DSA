@@ -15,3 +15,6 @@
 
 //5. Maximize the Gold (coding ninza)
 //https://www.naukri.com/code360/problems/maximize-the-gold_2443801
+
+//6. Tallest Billboard (leetcode 956)
+// https://leetcode.com/problems/tallest-billboard/
