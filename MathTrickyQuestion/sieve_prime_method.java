@@ -17,12 +17,9 @@ public class sieve_prime_method {
 		for(int i=2;i*i<prime.length;i++)
 		{
 			if(prime[i]==false) {
-				
-				for(int k=2;k*i<prime.length;k++) {       // note here k=i se chalega for(int k=i;k*i<prime.length;k++)
-				 	                                                // for (int j = i; j * i < n; j++) 
-                                   prime[i*k]=true;                                            // prime[j * i] = true;
-                                                                                        	                                	
-				}
+		
+				for(int k=i;k*i<prime.length;k++) { 
+                                   prime[k*i]=true;                                                                                                      
 			}
 		}
 		for(int i=2;i<prime.length;i++)
@@ -33,4 +30,33 @@ public class sieve_prime_method {
 		
 	}
 
+}
+
+// -------------------------------------------------------------------------------------------------------------------------------------
+
+import java.util.Arrays;
+
+public class SieveOfEratosthenesSimple {
+    public static void main(String[] args) {
+        int n = 50; // Change this to the desired upper limit
+        boolean[] isPrime = new boolean[n + 1];
+        Arrays.fill(isPrime, true);
+        isPrime[0] = false; // 0 is not a prime number
+        isPrime[1] = false; // 1 is not a prime number
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j <= n; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+
+        System.out.println("Prime numbers up to " + n + ":");
+        for (int i = 2; i <= n; i++) {
+            if (isPrime[i]) {
+                System.out.print(i + " ");
+            }
+        }
+    }
 }
